@@ -1,0 +1,19 @@
+<div class="container text-center card mt-5 mb-5 text-white"><app-spinner *ngIf="cargando"></app-spinner>
+<div *ngIf="!cargando">
+  <h1><b>Nombre: </b>{{ this.nombre }}</h1>
+  <br />
+  <h2><b> Email: </b>{{ this.email }}</h2>
+  <br />
+  <h2><b> Genero: </b>{{ this.genero }}</h2>
+  <br />
+  <h2>
+    <b> Estado: </b>
+    <span [ngStyle]="{ color: this.status == 'active' ? 'green' : 'red' }">{{
+      this.status
+    }}</span>
+  </h2>
+</div>
+<button class="btn-primary btn-lg mb-3" routerLink="/dashboard">
+  Volver a lista de Usuarios
+</button>
+</div>

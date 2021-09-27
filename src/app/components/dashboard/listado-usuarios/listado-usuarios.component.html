@@ -1,0 +1,14 @@
+<app-spinner *ngIf="cargando"></app-spinner>
+<div class="d-flex flex-column datos">
+    <div class="row gx-5 gy-3 mt-2 mb-2">
+    <div *ngFor="let usuario of listaUsuarios" class="col-md-3">
+        <app-card [user]="usuario"></app-card>
+    </div>
+</div>
+<div class="mb-3 text-center">
+    <span class="btn btn-dark" (click)="paginaAnterior()" *ngIf="paginaActual != 1">Anterior</span>
+    {{ paginaActual}}/{{totalPaginas}}
+    <span class="btn btn-dark" (click)="paginaSiguiente()" *ngIf="paginaActual != totalPaginas">Siguiente</span>
+</div>
+<button class="btn-dark btn-lg mt-auto" routerLink='/inicio'>Volver al Inicio</button>
+</div>
